@@ -1,6 +1,5 @@
 # presentation-screen
-Display matches on a TV screen or monitor
-Project is developed for the [Tournia](http://www.tournia.net/) system.
+Display matches on a TV screen or monitor. This project is developed for the [Tournia](http://www.tournia.net/) system.
 
 
 ## Getting Started
@@ -12,22 +11,22 @@ To get you started you can simply clone the presentation-screen repository and i
 You need git to clone the angular-seed repository. You can get git from
 [http://git-scm.com/](http://git-scm.com/).
 
-We also use a number of node.js tools to initialize and test angular-seed. You must have node.js and
+We also use a number of node.js tools to initialize and test presentation-screen. You must have node.js and
 its package manager (npm) installed.  You can get them from [http://nodejs.org/](http://nodejs.org/).
 
 ### Clone angular-seed
 
-Clone the angular-seed repository using [git][git]:
+Clone the presentation-screen repository using [git][git]:
 
 ```
-git clone https://github.com/angular/angular-seed.git
+git clone https://github.com/Tournia/presentation-screen.git
 cd angular-seed
 ```
 
 If you just want to start a new project without the angular-seed commit history then you can do:
 
 ```bash
-git clone --depth=1 https://github.com/angular/angular-seed.git <your-project-name>
+git clone --depth=1 https://github.com/Tournia/presentation-screen.git <your-project-name>
 ```
 
 The `depth=1` tells git to only pull down one commit worth of historical data.
@@ -53,7 +52,7 @@ folders in your project.
 * `app/bower_components` - contains the angular framework files
 
 *Note that the `bower_components` folder would normally be installed in the root folder but
-angular-seed changes this location through the `.bowerrc` file.  Putting it in the app folder makes
+we changed this location through the `.bowerrc` file.  Putting it in the app folder makes
 it easier to serve the files by a webserver.*
 
 ### Run the Application
@@ -71,7 +70,7 @@ Now browse to the app at `http://localhost:8000/app/index.html`.
 
 ## Testing
 
-There are two kinds of tests in the angular-seed application: Unit tests and End to End tests.
+There are two kinds of tests in the application: Unit tests and End to End tests. However, these tests need to be written.
 
 ### Running Unit Tests
 
@@ -104,7 +103,7 @@ npm run test-single-run
 
 ### End to end testing
 
-The angular-seed app comes with end-to-end tests, again written in [Jasmine][jasmine]. These tests
+This app comes with end-to-end tests, again written in [Jasmine][jasmine]. These tests
 are run with the [Protractor][protractor] End-to-End test runner.  It uses native events and has
 special features for Angular applications.
 
@@ -141,8 +140,7 @@ development server.
 
 ## Updating Angular
 
-Previously we recommended that you merge in changes to angular-seed into your own fork of the project.
-Now that the angular framework library code and tools are acquired through package managers (npm and
+The angular framework library code and tools are acquired through package managers (npm and
 bower) you can use these tools instead to update the dependencies.
 
 You can update the tool dependencies by running:
@@ -174,7 +172,7 @@ etc to function properly when an html page is opened via `file://` scheme instea
 
 ### Running the App during Development
 
-The angular-seed project comes preconfigured with a local development webserver.  It is a node.js
+The project comes preconfigured with a local development webserver.  It is a node.js
 tool called [http-server][http-server].  You can start this webserver with `npm start` but you may choose to
 install the tool globally:
 
@@ -233,7 +231,7 @@ along with a CI service (in Jenkins) hosted that will run unit and end to end te
 
 ## Contact
 
-For more information on AngularJS please check out http://angularjs.org/
+For more information on AngularJS please check out http://angularjs.org/. The framework of [angular-seed](https://github.com/angular/angular-seed) is used for this project.
 
 [git]: http://git-scm.com/
 [bower]: http://bower.io
