@@ -1,5 +1,5 @@
-# presentation-screen
-Display matches on a TV screen or monitor. This project is developed for the [Tournia](http://www.tournia.net/) system.
+# Tournia.net presentation screen
+Display matches on a TV screen or monitor. This project is developed for the [Tournia.net](http://www.tournia.net/) system.
 
 
 ## Getting Started
