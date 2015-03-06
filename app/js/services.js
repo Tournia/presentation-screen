@@ -4,9 +4,13 @@
 
 var tpsServices = angular.module('tpsServices', ['ngResource']);
 
-tpsServices.factory('Phone', ['$resource',
+tpsServices.factory('ApiRequest', ['$resource',
     function($resource){
-        return $resource('http://192.168.50.4/app_dev.php/DSfKkyGMps8Nxb1Ve0k2hPA0TUhwEWt/api/match/:phoneId.json', {}, {
-            query: {method:'GET', params:{phoneId:'listplaying'}, isArray:true}
+        return $resource('', {}, {
+            getCurrentMatches: {method:'GET', url: apiUrl + apiKey +'/api/match/listplaying.json', params:{a:'c'}, isArray:true, cache: false},
+            getUpcomingMatches: {method:'POST', url: apiUrl + apiKey +'/api/match/liststatus.json', cache: false},
+            getLastMatches: {method:'POST', url: apiUrl + apiKey +'/api/match/liststatus.json', cache: false}
         });
-    }]);
+    }
+
+]);

@@ -157,6 +157,10 @@ body {
 	line-height: 3em;
 }
 
+.match-data .score span {
+    display: block;
+}
+
 .match-data > div .vertical-aligner {
 	display: inline-block;
 	vertical-align: middle;

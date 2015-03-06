@@ -14,6 +14,11 @@
     <link rel="stylesheet" href="css/app.css">
 </head>
 <body ng-controller="ScreenCtrl">
+
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+
     <div class="container-fluid">
         <div class="header">
             <div class="row">
@@ -35,20 +40,21 @@
                         </div>
                     </div>
                     <div class="match-data">
-                        <div class="row" id="starttime|2015-03-01|13:41:57">
+                        <div class="row" id="starttime|2015-03-01|13:41:57" ng-repeat="match in currentMatches">
                             <div class="col-md-5 teams team1">
-                                Ka-Wing Lee<br>
+                                {{match.team1Txt}}
                             </div>
                             <div class="col-md-5 teams team2">
-                                Joost de Ridder<br>
+                                {{match.team2Txt}}
                             </div>
                             <div class="col-md-2 court">
                                 <div class="vertical-aligner">
                                     <div>court</div>
-                                    <h1>3</h1>
+                                    <h1>{{match.locationTxt}}</h1>
                                 </div>
                             </div>
                         </div>
+                        <!-- End current matches -->
                     </div>
                 </div>
             </div>
@@ -61,119 +67,18 @@
                     </div>
 
                     <div class="match-data">
-                        <div class="row" id="matchid|308">
+                        <div class="row" id="matchid|308" ng-repeat="match in upcomingMatches">
+                            <div ng-if="match.status == postponed" class="postponed">postponed</div>
                             <div class="col-md-5 teams team1">
-                                Martijn de Kooter<br>
+                                <span ng-repeat="player in match.team1.players">{{player.name}}</span>
                             </div>
                             <div class="col-md-5 teams team2">
-                                Arjen Eerden<br>
+                                <span ng-repeat="player in match.team2.players">{{player.name}}</span>
                             </div>
                             <div class="col-md-2 poule">
                                 <div class="vertical-aligner">
-                                    <h1>A</h1>
-                                    <div>Mens<br>Single</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row" id="matchid|310">
-                            <div class="col-md-5 teams team1">
-                                Jurjen van Pelt<br>
-                            </div>
-                            <div class="col-md-5 teams team2">
-                                Yorick Buijs<br>
-                            </div>
-                            <div class="col-md-2 poule">
-                                <div class="vertical-aligner">
-                                    <h1>A</h1>
-                                    <div>Mens<br>Single</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row" id="matchid|313">
-                            <div class="col-md-5 teams team1">
-                                Corne Brouwer<br>Daphne van Zee
-                            </div>
-                            <div class="col-md-5 teams team2">
-                                Ilse Hondius<br>Rudie Bruns
-                            </div>
-                            <div class="col-md-2 poule">
-                                <div class="vertical-aligner">
-                                    <h1>C</h1>
-                                    <div>Mix<br>Double</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row" id="matchid|314">
-                            <div class="col-md-5 teams team1">
-                                Emile Lijbrink<br>Yvette Doedegebure
-                            </div>
-                            <div class="col-md-5 teams team2">
-                                Vincent Peters<br>Wendy Nieuwdorp
-                            </div>
-                            <div class="col-md-2 poule">
-                                <div class="vertical-aligner">
-                                    <h1>C</h1>
-                                    <div>Mix<br>Double</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row" id="matchid|315">
-                            <div class="col-md-5 teams team1">
-                                Cihan Huseyin Celik<br>Ivana Pieters
-                            </div>
-                            <div class="col-md-5 teams team2">
-                                Michiel de Graaf<br>Nora Assendorp
-                            </div>
-                            <div class="col-md-2 poule">
-                                <div class="vertical-aligner">
-                                    <h1>C</h1>
-                                    <div>Mix<br>Double</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row" id="matchid|311">
-                            <div class="postponed">postponed</div>
-                            <div class="col-md-5 teams team1">
-                                Arnold Jorna<br>Floortje van Es
-                            </div>
-                            <div class="col-md-5 teams team2">
-                                Erik Groeneveld<br>Inge Hoytink
-                            </div>
-                            <div class="col-md-2 poule">
-                                <div class="vertical-aligner">
-                                    <h1>D</h1>
-                                    <div>Mix<br>Double</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row" id="matchid|312">
-                            <div class="postponed">postponed</div>
-                            <div class="col-md-5 teams team1">
-                                Ewoud Smeur<br>Annemieke ter Telgte
-                            </div>
-                            <div class="col-md-5 teams team2">
-                                Mark Rijsdijk<br>Wendy Agterberg
-                            </div>
-                            <div class="col-md-2 poule">
-                                <div class="vertical-aligner">
-                                    <h1>D</h1>
-                                    <div>Mix<br>Double</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row" id="matchid|316">
-                            <div class="postponed">postponed</div>
-                            <div class="col-md-5 teams team1">
-                                Jan Spierings<br>Sanne Willems
-                            </div>
-                            <div class="col-md-5 teams team2">
-                                Anindya Sanyal<br>Naomi Silkstone
-                            </div>
-                            <div class="col-md-2 poule">
-                                <div class="vertical-aligner">
-                                    <h1>C</h1>
-                                    <div>Mix<br>Double</div>
+                                    <h1>{{match.disciplineLevelTxt}}</h1>
+                                    <div>{{match.disciplineTypeTxt}}</div>
                                 </div>
                             </div>
                         </div>
@@ -185,159 +90,31 @@
                 <div class="match-scores match-container">
                     <div class="match-header row">
                         <div class="col-md-12">
-                            <h4>Last match scores</h4>
+                            <h4>Played matches</h4>
                         </div>
                     </div>
                     <div class="match-data">
-                        <div class="row" id="endtime|2013-03-17|16:50:43">
+                        <div class="row" id="endtime|2013-03-17|16:50:43" ng-repeat="match in playedMatches">
                             <div class="col-md-5 teams team1">
-                                Joost de Ridder<br>Karin Buisman
+                                <span ng-repeat="player in match.team1.players">{{player.name}}</span>
                             </div>
                             <div class="col-md-5 teams team2">
-                                Yvette Welling<br>Rens van den Brand
+                                <span ng-repeat="player in match.team2.players">{{player.name}}</span>
                             </div>
                             <div class="col-md-2 score">
                                 <div class="vertical-aligner">
-                                    19-21<br>16-21
+                                    <span ng-repeat="score in match.scoreArray track by $index">{{score}}</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="row" id="endtime|2013-03-17|16:45:26">
-                            <div class="col-md-5 teams team1">
-                                Annemieke ter Telgte<br>
-                            </div>
-                            <div class="col-md-5 teams team2">
-                                Naomi Silkstone<br>
-                            </div>
-                            <div class="col-md-2 score">
-                                <div class="vertical-aligner">
-                                    12-21<br>21-12
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row" id="endtime|2013-03-17|16:40:16">
-                            <div class="col-md-5 teams team1">
-                                Felix Claessen<br>Ilse Leistra
-                            </div>
-                            <div class="col-md-5 teams team2">
-                                Wouter Wolf<br>Yvonne van Lieshout
-                            </div>
-                            <div class="col-md-2 score">
-                                <div class="vertical-aligner">
-                                    21-8<br>21-11
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row" id="endtime|2013-03-17|16:39:49">
-                            <div class="col-md-5 teams team1">
-                                Rolf van Zanten<br>Mathijs Derks
-                            </div>
-                            <div class="col-md-5 teams team2">
-                                Ariel Sielaff<br>Tim de Vos
-                            </div>
-                            <div class="col-md-2 score">
-                                <div class="vertical-aligner">
-                                    21-16<br>19-21
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row" id="endtime|2013-03-17|16:37:53">
-                            <div class="col-md-5 teams team1">
-                                Jeroen Salet<br>Naj Jai Lee
-                            </div>
-                            <div class="col-md-5 teams team2">
-                                Moni Haque<br>Sharan Sambhwani
-                            </div>
-                            <div class="col-md-2 score">
-                                <div class="vertical-aligner">
-                                    21-18<br>18-21
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row" id="endtime|2013-03-17|16:20:16">
-                            <div class="col-md-5 teams team1">
-                                Ka-Wing Lee<br>Sandra van der Vlerk
-                            </div>
-                            <div class="col-md-5 teams team2">
-                                Ingrid Viertelhuizen<br>Yorick Buijs
-                            </div>
-                            <div class="col-md-2 score">
-                                <div class="vertical-aligner">
-                                    17-21<br>20-21
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row" id="endtime|2013-03-17|16:19:56">
-                            <div class="col-md-5 teams team1">
-                                Cihan Huseyin Celik<br>Ivana Pieters
-                            </div>
-                            <div class="col-md-5 teams team2">
-                                Vincent Peters<br>Wendy Nieuwdorp
-                            </div>
-                            <div class="col-md-2 score">
-                                <div class="vertical-aligner">
-                                    7-21<br>21-20
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row" id="endtime|2013-03-17|16:18:26">
-                            <div class="col-md-5 teams team1">
-                                Arnold Jorna<br>Floortje van Es
-                            </div>
-                            <div class="col-md-5 teams team2">
-                                Mark Rijsdijk<br>Wendy Agterberg
-                            </div>
-                            <div class="col-md-2 score">
-                                <div class="vertical-aligner">
-                                    17-21<br>12-21
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row" id="endtime|2013-03-17|16:10:07">
-                            <div class="col-md-5 teams team1">
-                                Ilse Hondius<br>Rudie Bruns
-                            </div>
-                            <div class="col-md-5 teams team2">
-                                Emile Lijbrink<br>Yvette Doedegebure
-                            </div>
-                            <div class="col-md-2 score">
-                                <div class="vertical-aligner">
-                                    21-13<br>21-18
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row" id="endtime|2013-03-17|16:09:57">
-                            <div class="col-md-5 teams team1">
-                                Sylvain Clerc<br>Johan Theunisse
-                            </div>
-                            <div class="col-md-5 teams team2">
-                                Micha Joosten<br>Wouter van Dijk
-                            </div>
-                            <div class="col-md-2 score">
-                                <div class="vertical-aligner">
-                                    21-6<br>21-13
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End last match scores-->
+                        <!-- End played matches -->
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <p style="height:200px">&nbsp;</p>
-    <ul>
-        <li ng-repeat="phone in phones">
-            <span>{{phone.name}}</span>
-            <p>{{phone.snippet}}</p>
-            <pre>{{phone}}</pre>
-        </li>
-    </ul>
 
-    <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
 
     <div ng-view></div>
 
