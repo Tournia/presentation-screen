@@ -1,7 +1,7 @@
 # Tournia.net presentation screen
 Display matches on a TV screen or monitor. This project is developed for the [Tournia.net](http://www.tournia.net/) system.
 
-You need to obtain an API key, which you can generate from your tournament settings page, on the API page. This API key must be stored in the app/js/app.js file.
+You need to obtain an API key, which you can generate from your tournament settings page, on the API page. This API key must be stored in the app/js/config.js file.
 
 The API docs can be found at http://www.tournia.net/api/docs/
 
