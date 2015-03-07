@@ -68,7 +68,7 @@
 
                     <div class="match-data">
                         <div class="row" id="matchid|308" ng-repeat="match in upcomingMatches">
-                            <div ng-if="match.status == postponed" class="postponed">postponed</div>
+                            <div ng-if="match.postponedBool" class="postponed">postponed</div>
                             <div class="col-md-5 teams team1">
                                 <span ng-repeat="player in match.team1.players">{{player.name}}</span>
                             </div>
@@ -124,6 +124,7 @@
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="js/config.js"></script>
     <script src="js/app.js"></script>
     <script src="js/controllers.js"></script>
     <script src="js/services.js"></script>

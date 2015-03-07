@@ -36,6 +36,7 @@ tpsControllers.controller('ScreenCtrl', ['$scope', 'ApiRequest', '$http',
                     var indexLastSpace = value.discipline.lastIndexOf(" ");
                     value.disciplineTypeTxt = value.discipline.substr(0, indexLastSpace);
                     value.disciplineLevelTxt = value.discipline.substr(indexLastSpace+1);
+                    value.postponedBool = value.status == "Postponed";
                 });
                 $scope.upcomingMatches = data;
             }).error(function(data, status, headers, config) {
@@ -46,19 +47,21 @@ tpsControllers.controller('ScreenCtrl', ['$scope', 'ApiRequest', '$http',
         // played matches
         var playedData = {
             status: {'0': 'finished', '1': 'played' },
-            limit: 25
+            limit: 25,
+            sortOrder: 'DESC'
         }
         $http.post(apiUrl + apiKey +'/api/match/liststatus.json', playedData)
             .success(function(data, status, headers, config) {
                 // Process data
+                var playedMatchesRes = [];
                 angular.forEach(data, function(value, key) {
                     var indexLastSpace = value.discipline.lastIndexOf(" ");
                     value.disciplineTypeTxt = value.discipline.substr(0, indexLastSpace);
                     value.disciplineLevelTxt = value.discipline.substr(indexLastSpace+1);
                     value.scoreArray = value.score.split(" ");
+                    playedMatchesRes.unshift(value);
                 });
-                console.log(data);
-                $scope.playedMatches = data;
+                $scope.playedMatches = playedMatchesRes;
             }).error(function(data, status, headers, config) {
                 // Handle the error
             });
