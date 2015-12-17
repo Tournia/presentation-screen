@@ -2,5 +2,5 @@
 
 /* Config */
 
-var apiKey = 'ENTER YOUR API KEY HERE';
-var apiUrl = 'http://www.tournia.net/';
+var apiKey = 'vtgfcDXIHhP8QGWJK3Ow0nmT1dEqv6';
+var apiUrl = 'https://www.tournia.net/api/v2/';

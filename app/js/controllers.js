@@ -11,7 +11,7 @@ tpsControllers.controller('ScreenCtrl', ['$scope', 'ApiRequest', '$http',
         //$scope.playedMatches = ApiRequest.getLastMatches({}, { status:'played', 'limit':25, 'startPos':0 });
 
         // current matches
-        $http.get(apiUrl + apiKey +'/api/match/listplaying.json', {cache: false})
+        $http.get(apiUrl + apiKey +'/matches/listplaying', {cache: false})
             .success(function(data, status, headers, config) {
                 // Process data
                 angular.forEach(data, function(value, key) {
@@ -29,7 +29,7 @@ tpsControllers.controller('ScreenCtrl', ['$scope', 'ApiRequest', '$http',
             status: {'0': 'ready', '1': 'postponed' },
             limit: 25
         }
-        $http.post(apiUrl + apiKey +'/api/match/liststatus.json', upcomingData)
+        $http.post(apiUrl + apiKey +'/matches/liststatus', upcomingData)
             .success(function(data, status, headers, config) {
                 // Process data
                 angular.forEach(data, function(value, key) {
@@ -50,7 +50,7 @@ tpsControllers.controller('ScreenCtrl', ['$scope', 'ApiRequest', '$http',
             limit: 25,
             sortOrder: 'DESC'
         }
-        $http.post(apiUrl + apiKey +'/api/match/liststatus.json', playedData)
+        $http.post(apiUrl + apiKey +'/matches/liststatus', playedData)
             .success(function(data, status, headers, config) {
                 // Process data
                 var playedMatchesRes = [];
