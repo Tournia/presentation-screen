@@ -37,7 +37,7 @@
 
 /* Presentation screen */
 body {
-	background: url("../img/2560.jpg") no-repeat center center fixed;
+	background: url("../img/background-large.jpg") no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -51,7 +51,7 @@ body {
 	line-height: 180px;
 }
 
-.header img.isbt-logo {
+.header img.tournament-logo-left {
     max-height: 160px;
 }
 
@@ -67,7 +67,7 @@ body {
 	text-align: center;
 }
 
-.header img.dirtydisney-logo {
+.header img.tournament-logo-right {
 	width: 100%;
     vertical-align: middle;
 }
