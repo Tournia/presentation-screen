@@ -33,9 +33,9 @@ tpsControllers.controller('ScreenCtrl', ['$scope', 'ApiRequest', '$http',
             .success(function(data, status, headers, config) {
                 // Process data
                 angular.forEach(data, function(value, key) {
-                    var indexLastSpace = value.discipline.lastIndexOf(" ");
-                    value.disciplineTypeTxt = value.discipline.substr(0, indexLastSpace);
-                    value.disciplineLevelTxt = value.discipline.substr(indexLastSpace+1);
+                    var indexLastSpace = value.pool.lastIndexOf(" ");
+                    value.poolTypeTxt = value.pool.substr(0, indexLastSpace);
+                    value.poolLevelTxt = value.pool.substr(indexLastSpace+1);
                     value.postponedBool = value.status == "Postponed";
                 });
                 $scope.upcomingMatches = data;
@@ -55,9 +55,9 @@ tpsControllers.controller('ScreenCtrl', ['$scope', 'ApiRequest', '$http',
                 // Process data
                 var playedMatchesRes = [];
                 angular.forEach(data, function(value, key) {
-                    var indexLastSpace = value.discipline.lastIndexOf(" ");
-                    value.disciplineTypeTxt = value.discipline.substr(0, indexLastSpace);
-                    value.disciplineLevelTxt = value.discipline.substr(indexLastSpace+1);
+                    var indexLastSpace = value.pool.lastIndexOf(" ");
+                    value.poolTypeTxt = value.pool.substr(0, indexLastSpace);
+                    value.poolLevelTxt = value.pool.substr(indexLastSpace+1);
                     value.scoreArray = value.score.split(" ");
                     playedMatchesRes.unshift(value);
                 });
